@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Conference description</title>
+    <meta name="description" content="Case study page of Project" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/profile.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Polina Tanasevich</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#conferences" class="header__link">
+                Conferences
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#conferences"> Conferences </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Data Fest 2024</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Multimodal GeoEmbeddings: Methods, Results and Implementation.
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://youtu.be/wTDzDgQ5Hfg" class="btn btn--bg" target="_blank">Live Link</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/jpeg/datafest_logo.png"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Abstract</h3>
+              <p class="project-details__desc-para">
+                The application of multimodal geo-embeddings based on event data for forecasting tasks has become 
+                increasingly relevant in the banking and fintech sectors, where artificial intelligence solutions enhance 
+                customer recommendations, automate decision-making, and support geographic planning for branch expansions. 
+                This study proposes a method that leverages multimodal geo-embeddings, built from diverse event data sources, 
+                to improve predictive model accuracy by up to 15%. 
+              </p>
+              <p class="project-details__desc-para">
+                A framework, PyTorch-LifeStream, was employed to construct these embeddings using advanced approaches 
+                such as CoLES, NSP, and SOP, effectively representing geographic locations as vectors that capture the 
+                relationship between similar locations. To manage spatial data, coordinates were converted into geo-hashes 
+                using H3 Uber, simplifying computational demands by aggregating event data within hexagonal grids.
+              </p>
+              <p class="project-details__desc-para">
+                The study involved training embeddings with event data (such as customer activities in specific areas) 
+                and then using these embeddings as features in a meta-model for rent price forecasting. 
+                Model benchmarking revealed that incorporating multimodal embeddings improved model accuracy by an average 
+                of 16% over traditional flat data approaches. The final embeddings are stored in Hadoop with monthly updates, 
+                allowing scalable integration into existing data pipelines.
+              </p>
+              <p class="project-details__desc-para">
+                This method demonstrates the potential of multimodal geo-embeddings to enhance spatial analytics, 
+                providing a robust framework for improved context-awareness in predictive modeling.
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">Python</div>
+                <div class="skills__skill">PyTorch</div>
+                <div class="skills__skill">RNN</div>
+                <div class="skills__skill">BERT</div>
+                <div class="skills__skill">LGBM</div>
+                <div class="skills__skill">SQL</div>
+                <div class="skills__skill">Hadoop</div>
+                <div class="skills__skill">Git</div>
+                <div class="skills__skill">Scientific Research</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Live</h3>
+              <a
+                href="https://youtu.be/wTDzDgQ5Hfg"
+                class="btn btn--med btn--theme project-details__links-btn"
+                target="_blank"
+                >Live Link</a
+              >
+              <a
+                href="#"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Presentation Link</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://linkedin.com/in/tanasevich-ps">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/TanasevichPS">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>              
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Polina Tanasevich</h4>
+            <p class="main-footer__short-desc">
+              AI specialist and PhD student in Mathematics at the Lomonosov MSU, 
+              researching metamaterials and machine learning under Professor
+            <a href="https://istina.msu.ru/workers/1868389/">Vladimir Levine</a>.
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
