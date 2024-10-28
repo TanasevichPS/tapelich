@@ -1,0 +1,217 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>Joey Hong</title>
+
+    <meta name="author" content="Joey Hong">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌐</text></svg>">
+  </head>
+
+  <body>
+    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+      <tr style="padding:0px">
+        <td style="padding:0px">
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr style="padding:0px">
+              <td style="padding:2.5%;width:63%;vertical-align:middle">
+                <p class="name" style="text-align: center;">
+                  Joey Hong
+                </p>
+                <p>I am a PhD Student advised by Professor <a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a> and Professor <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>, where I work on offline reinforcement learning. 
+                </p>
+                <p>
+                  Prior to joining my PhD program, I was an AI Resident at <a href="https://research.google/">Google Research</a>, where I worked on multi-task bandits as well as program synthesis.
+                </p>
+                <p>
+                  Before that, I was graduated from <a href="https://www.caltech.edu/">Caltech</a> where I worked with Professor <a href="http://www.yisongyue.com/">Yisong Yue</a>. 
+                </p>
+                <p style="text-align:center">
+                  <a href="mailto:jxihong@gmail.com">Email</a> &nbsp;/&nbsp;
+                  <a href="https://scholar.google.com/citations?user=SiBVfPUAAAAJ&hl=en">Google Scholar</a> &nbsp;/&nbsp;
+                  <a href="https://github.com/jxihong/">Github</a>
+                </p>
+              </td>
+              <td style="padding:2.5%;width:40%;max-width:40%">
+                <a href="images/profile.jpg"><img style="width:100%;max-width:100%" alt="profile photo" src="images/profile.jpg" class="hoverZoomLink"></a>
+              </td>
+            </tr>
+          </tbody></table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+              <tr>
+              <td style="padding:20px;width:100%;vertical-align:middle">
+                <h2>Current Research</h2>
+                <p>
+                  I'm currently interested in pushing the capabilities of offline reinforcement learning, specifically in applications that involve interacting with humans, through a mixture of theory and applied work.
+                </p>
+              </td>
+              </tr>              
+          </tbody></table>
+           <table
+            style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
+             <tbody>
+             <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two">
+                      <img src="images/zero_shot_dialogue.png" width=160></img>
+                    </div>
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2311.05584">
+                    <papertitle>Zero-Shot Goal-Directed Dialogue via RL on Imagined Conversations</papertitle>
+                  </a>
+                  <br>
+                  <strong>Joey Hong</strong>,
+                  <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>,
+                  <a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a>
+                  <br>
+                  <a href="https://arxiv.org/abs/2311.05584">arXiv</a>,
+                  <a href="https://docs.google.com/presentation/d/11RF5R9qBYtNaNsbo2_5kucaHC7FNggGZnrYlqJ7ynm4/edit?usp=sharing">slides</a>
+                </td>
+              </tr>
+             <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two">
+                      <img src="images/history.png" width=160></img>
+                    </div>
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2310.20663">
+                    <papertitle>Offline RL with Observation Histories: Analyzing and Improving Sample Complexity</papertitle>
+                  </a>
+                  <br>
+                  <strong>Joey Hong</strong>,
+                  <a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a>,
+                  <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
+                  <br>
+                  <a href="https://arxiv.org/abs/2310.20663">arXiv</a>
+                </td>
+              </tr>
+
+              <tr onmouseout="influence_stop()" onmouseover="influence_start()">
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two" id='influence_image'><video  width=100% height=100% muted autoplay loop>
+                    <source src="images/overcooked_influence_example1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                    </video></div>
+                    <img src='images/overcooked_influence.png' width="160">
+                  </div>
+                  <script type="text/javascript">
+                    function influence_start() {
+                      document.getElementById('influence_image').style.opacity = "1";
+                    }
+        
+                    function influence_stop() {
+                      document.getElementById('influence_image').style.opacity = "0";
+                    }
+                    influence_stop()
+                  </script>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2303.02265">
+                    <papertitle>Learning to Influence Human Behavior with Offline Reinforcement Learning</papertitle>
+                  </a>
+                  <br>
+                  <strong>Joey Hong</strong>,
+                  <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>,
+                  <a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a>
+                  <br>
+                  <em>NeurIPS</em>, 2023
+                  <br>
+                  <a href="https://arxiv.org/abs/2303.02265">arXiv</a>, <a
+                    href="https://sites.google.com/berkeley.edu/learningtoinfluencehumans">website</a>
+                </td>
+              </tr>
+              <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two">
+                      <img src="images/ccvl.png" width=160></img>
+                    </div>
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2212.04607">
+                    <papertitle>Confidence-Conditioned Value Functions for Offline Reinforcement Learning</papertitle>
+                  </a>
+                  <br>
+                  <strong>Joey Hong</strong>,
+                  <a href="https://aviralkumar2907.github.io/">Aviral Kumar</a>,
+                  <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
+                  <br>
+                  <em>ICLR</em>, 2022 (oral)
+                  <br>
+                  <a href="https://arxiv.org/abs/2212.04607">arXiv</a>
+                </td>
+              </tr>
+             <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two">
+                      <img src="images/misspecification.png" width=160></img>
+                    </div>
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2212.04717">
+                    <papertitle>On the Sensitivity of Reward Inference to Misspecified Human Models</papertitle>
+                  </a>
+                  <br>
+                  <strong>Joey Hong</strong>,
+                  <a href="https://scholar.google.com/citations?user=X-Sd3-8AAAAJ&hl=en">Kush Bhatia</a>,
+                  <a href="http://people.eecs.berkeley.edu/~anca/">Anca Dragan</a>
+                  <br>
+                  <em>ICLR</em>, 2022 (oral)
+                  <br>
+                  <a href="https://arxiv.org/abs/2212.04717">arXiv</a>
+                </td>
+              </tr>
+             <tr>
+                <td style="padding:20px;width:25%;vertical-align:middle">
+                  <div class="one">
+                    <div class="two">
+                      <img src="images/bc_vs_offline_rl.png" width=160></img>
+                    </div>
+                  </div>
+                </td>
+                <td style="padding:20px;width:75%;vertical-align:middle">
+                  <a href="https://arxiv.org/abs/2204.05618">
+                    <papertitle>When Should We Prefer Offline Reinforcement Learning Over Behavioral Cloning?</papertitle>
+                  </a>
+                  <br>
+                  <a href="https://aviralkumar2907.github.io/">Aviral Kumar*</a>,
+                  <strong>Joey Hong*</strong>,
+                  <a href="https://asap7772.github.io/">Anikait Singh</a>,
+                  <a href="https://people.eecs.berkeley.edu/~svlevine/">Sergey Levine</a>
+                  <br>
+                  <em>ICLR</em>, 2021
+                  <br>
+                  <a href="https://arxiv.org/abs/2204.05618">arXiv</a>,
+                  <a href="https://bair.berkeley.edu/blog/2022/04/25/rl-or-bc/">blog</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <tr>
+              <td style="padding:0px">
+                <br>
+                <p style="text-align:right;font-size:small;">
+                  This website uses this <a href="https://github.com/jonbarron/jonbarron_website">template</a>.
+              </td>
+            </tr>
+          </tbody></table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
