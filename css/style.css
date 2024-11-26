@@ -247,7 +247,7 @@ textarea {
     text-align: center; }
 
 .about {
-  background: linear-gradient(to right, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url(../assets/svg/common-bg.svg); }
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url(../assets/svg/common-bg.svg); }
   .about__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
