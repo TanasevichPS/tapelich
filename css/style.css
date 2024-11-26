@@ -247,7 +247,7 @@ textarea {
     text-align: center; }
 
 .about {
-  background: #eed9fc; }
+  background: #fafafa; }
   .about__content {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -403,7 +403,7 @@ textarea {
         width: 100%; } }
 
 .project-cs-hero {
-  color: #fff;
+  color: #faf9e6;
   background: linear-gradient(to right, rgba(86, 0, 184, 0.8), rgba(86, 0, 184, 0.8)), url(../../assets/svg/common-bg.svg);
   background-size: cover;
   background-position: center;
