@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Description of the SBER projects</title>
+    <meta name="description" content="description of the SBER projects" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/profile.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Polina Tanasevich</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#conferences" class="header__link">
+                Conferences
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#conferences"> Conferences </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Tech Lead of Data Science</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            Leading cross-functional teams in building AI solutions like geospatial analytics models, 
+            driving scalable automation, aligning AI with business goals, and contributing to industry research.
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://github.com/TanasevichPS/geo_embeddings" class="btn btn--bg" target="_blank">Private Repo</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/jpeg/nte_start.png"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Overview</h3>
+              <p class="project-details__desc-para">
+                1.	Developed geo-analytics system, which was then improved with a custom LLM solution. 
+                This boosted the accuracy of the geo-analytics forecasts by 16%. <br/>
+                в данном проекте используются мультимодальные эмбеддинги, построенные на последовательностях событий, 
+                которые построены с помощью библиотеки Pytorch lifestream несколькими методами - COLES, NSP, SOP. 
+                мультимодальность заключалась в доменах - гео домен, транзакции, точки интересов, тип месторасположения 
+                (ТЦ, офис и тд), дата события и др. Далее эмбеддинги сжимались до размера 128 методом PCA. 
+                После добавили отзывы, где использовали LLM чтобы построить эмбеддинги (Gigachat, Lama, Mistral). 
+                Для Lama и Mistral - я использовала метод квантования для сжатия LLM до INT8. 
+                Для получения эмбеддингов из текста отзывов с помощью LLM (GigaChat, LLaMA-2, Mistral) применялся метод усреднения 
+                (mean pooling) токенов последнего скрытого слоя модели. LLM использовались исключительно в режиме инференса 
+                (без fine-tuning) для генерации эмбеддингов текста отзывов
+              </p>
+              <p class="project-details__desc-para">
+                Задача - Повысить точность прогнозирования регионального спроса за счет интеграции данных из разных доменов. <br/>
+                Решение - Мультимодальные эмбеддинги: <br/>
+                - Построены для событийных данных (транзакции, точки интереса) методами контрастивного обучения:  COLES, NSP, SOP <br/>
+                - Сжаты с 2048-D до 128-D с помощью PCA (сохранено 95% дисперсии).  <br/>
+                Интеграция LLM для текста: <br/>
+                - Добавлены эмбеддинги отзывов на основе трех моделей:  GigaChat (proprietary - Закрытые модели), 
+                LLaMA-2 (квантованная в INT8 через Bitsandbytes, сжатие 4x), Mistral 7B (квантованная в INT8, сжатие 4x)  
+                - Лучший результат: LLaMA-INT8 (+12% R^2 на downstream-задачах).  
+                Downstream-задачи — целевые прикладные задачи (например, классификация отзывов или прогнозирование спроса).<br/>
+                - Bitsandbytes - Библиотека для квантования моделей (сжатие весов 32/16-битных чисел в 8/4-битные). 
+                Уменьшает размер модели и ускоряет инференс <br/>
+                
+                Пример реализации:
+                <code>
+                  from transformers import AutoModelForCausalLM, AutoTokenizer
+                  import torch
+                  # Загрузка модели и токенизатора
+  
+                  model_id = "meta-llama/Llama-2-7b-chat-hf"
+                  tokenizer = AutoTokenizer.from_pretrained(model_id)
+                  model = AutoModelForCausalLM.from_pretrained(
+                    model_id,
+                    load_in_8bit=True,  # Включение 8-битного квантования
+                    device_map="auto"    # Автораспределение по GPU/CPU)
+                  # Пример инференса
+                  input_text = "Как повысить точность геоаналитики?"
+                  inputs = tokenizer(input_text, return_tensors="pt").to("cuda")
+                  outputs = model.generate(**inputs, max_new_tokens=50)
+                  print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+  
+                  # Для эмбеддингов:
+                  inputs = tokenizer(input_text, return_tensors="pt", padding=True, truncation=True).to("cuda")
+                  with torch.no_grad():
+                    outputs = model(**inputs, output_hidden_states=True)
+  
+                  # Усреднение последнего слоя
+                  embeddings=outputs.hidden_states[-1].mean(dim=1).cpu().numpy()
+                </code>
+              </p>
+              <p class="project-details__desc-para">
+              Гибридная модель: Объединение эмбеддингов путем конкатенации. Вход: мультимодальные эмбеддинги (128-D) + 
+              LLM-эмбеддинги (1024-D) <br/>
+              Результаты: снижение MAPE на 16% против baseline за счет мультимодальных эмбеддингов, 
+              Улучшила R² прогноза спроса с 0.81 до 0.91 (+12%) за счёт LLM, Ускорение инференса LLM в 4x за счет INT8-квантования. <br/>
+            </p>
+            <p class="project-details__desc-para">
+            2.	Accelerated BERT inference 2x on NVIDIA A100 via model quantization. <br/>
+            Проект: Оптимизация BERT для чат-бота с использованием INT8 квантования и TensorRT - Разрабатывался высоконагруженный 
+            чат-бот для обработки пользовательских запросов в реальном времени. 
+            Основная модель — BERT— использовалась для NLP-задач (генерация ответов).  
+            Моя роль: Оптимизация инференса BERT для снижения задержки (latency) и увеличения пропускной способности (throughput) 
+            с приемлемым компромиссом между скоростью и качеством.<br/>
+          </p>
+          <p class="project-details__desc-para">
+            Проблема до оптимизации <br/>
+            - Высокая задержка: 50 мс на запрос (при batch size=16) на GPU NVIDIA A100.  <br/>
+            - Ограниченная пропускная способность: При большой нагрузке бот не успевал обрабатывать запросы в реальном времени. <br/>
+            - Ресурсоёмкость: Полноценный FP32-режим BERT избыточен для чат-бота, где критична скорость. <br/>
+            
+            Решение: INT8 квантование + TensorRT.  <br/>
+            - Квантование модели в INT8 - Замена 32-битных весов (FP32) на 8-битные (INT8) с сохранением точности через калибровку.  
+            Эффект: Уменьшение объёма вычислений и памяти (~4x сжатие).  Для INT8 квантования в TensorRT использовался метод 
+            калибровки на основе репрезентативного набора входных данных (калибровочный датасет) для минимизации потерь 
+            точности при квантовании активаций. <br/>
+            - Оптимизация через TensorRT: Конвертация BERT в оптимизированный граф TensorRT с поддержкой INT8. 
+            Использование тензорных ядер A100 для ускорения матричных операций в батче. 
+            Динамический батчинг: Автоматическое объединение запросов (до 16) для параллельной обработки.<br/> 
+          </p>
+          <p class="project-details__desc-para">
+          Результаты <br/> 
+          <table>
+            <tr>
+                <td>Метрика</td>
+                <td>До оптимизации</td>
+                <td>После оптимизации</td>
+            </tr>
+            <tr>
+                <td>Latency</td>
+                <td>50 mc/td>
+                <td>25 mc</td>
+            </tr>
+            <tr>
+                <td>Throughput</td>
+                <td>20 RPS</td>
+                <td>40 RPS</td>
+            </tr>
+            <tr>
+                <td>ROUGE-L (F1)</td>
+                <td>0.62</td>
+                <td>0.58</td>
+            </tr>
+            <tr>
+              <td>Perplexity</td>
+              <td>16</td>
+              <td>19</td>
+          </tr>
+        </table> <br/> 
+        ROUGE-L: Оценивает длину наибольшей общей подпоследовательности (LCS) слов, учитывая беглость и структуру. <br/> 
+        Perplexity – метрика, измеряющая неуверенность языковой модели (LLM) при генерации текста. экспонента от энтропии: 
+        Perplexity=exp(−1/N∑logP(w_i∣w1,…,wi−1)), где: P(wi) — вероятность предсказания слова w_i моделью. 
+        N — количество слов в тексте. <br/> 
+        Метрики ROUGE-L и Perplexity оценивались на отдельном валидационном наборе диалогов, репрезентативном для работы чат-бота. <br/> 
+      </p>
+      <p class="project-details__desc-para">
+      3.	Built NLP pipeline for log analysis that detected +42% errors, resolved 70% of issues, cut verification costs by 80%, and
+      improved customer experience.<br/>
+      Разработать систему для автоматического анализа текстовых логов, выявления ошибок и оценки их влияния на бизнес-процессы. <br/>
+      Ключевые результаты:<br/>
+      - Обнаружено +42% новых ошибок (улучшение качества мониторинга). <br/>
+      - Успешно устанено 70% ошибок(оптимизация ресурсов). <br/>
+      - Снижение ручной обработки логов на 80%. <br/>
+      - Построение графа путей клиентов для принятия решений о приоритетах исправления ошибок.<br/>
+    </p>
+    <p class="project-details__desc-para">
+      Предобработка логов, включающая очистку, токенизацию, маскирование явных персональных данных (PII) с использованием 
+      NER (Natasha) и регулярных выражений. Предобработка логов - Natasha (для NER - распознавания именованных сущностей), 
+      NLTK (токенизация), Gensim (тематическое моделирование), Python (регулярные выражения).<br/>
+      Оценка времени, затрачиваемого на ошибки (включая повторные действия сотрудников). В
+      ремя, затрачиваемое на ошибки, оценивалось путем анализа временных меток последовательных логов, связанных с ошибкой. <br/>
+      Визуализация путей клиентов (графы для анализа влияния ошибок на бизнес-метрики). Инструменты: NetworkX + Gephi. <br/>
+    </p>
+    <p class="project-details__desc-para">
+    4.	The proportion of non-relevant recommendations was reduced from 30% to 10%, according to expert assessment using 
+    LLM inference. <br/>
+    Проект: Агент для обработки обратной связи на базе LLM. <br/> 
+    Цель: Снизить долю нерелевантных рекомендаций с 30% до 10% за счёт кластеризации обратной связи и точной генерации решений.<br/>
+    Проблема: Обратная связь (отзывы, жалобы, предложения) от пользователей часто неструктурирована и содержит шум. 
+    Предыдущая обработка приводила к нерелевантным рекомендациям (30% случаев).  <br/>
+  </p>
+  <p class="project-details__desc-para">
+    Этапы: <br/>
+    - Кластеризация текстов обратной связи по тематикам и проблемам. <br/>
+    - Генерация рекомендаций для каждой проблемы.
+    - Контроль качества кластеров: Нет размытых описаний. Нет избыточной детализации <br/>
+  
+  Архитектура решения. Система состоит из трёх ключевых модулей: <br/>
+  1.Агент - Выполняет основные задачи: суммаризация, кластеризация, генерация идей. <br/>
+  2. Память - Хранит историю обработки для контекста (например, прошлые рекомендации). <br/>
+  3. Критик - Проверяет качество кластеров и рекомендаций, отправляет на доработку.  <br/>
+
+  Функции агента: <br/>
+  - Суммаризация (GigaChat inference) - Цель: Уменьшить объём текста без потери смысла. <br/>
+  - Кластеризация (HDBSCAN). Шаги: <br/>
+      - Векторизация текстов: E5 создаёт эмбеддинги.<br/>
+      - Кластеризация: HDBSCAN <br/>
+
+  Решение проблемы размытости/детализации - Генерация двух типов описаний для каждого кластера: <br/>
+  - Общее (для бизнеса): Проблемы с производительностью в платежах. <br/>
+  - Детальное (для разработки): Лаги при переходе в 'Платежи' <br/>
+  
+  Генерация рекомендаций (GigaChat inference)<br/>
+  Критик (Quality Assurance). Функции: Оценка релевантности: Сравнивает рекомендации с эталонными решениями, 
+  если есть, а также (Embedding Similarity) Средняя косинусная близость между эмбеддингом рекомендации (E5) и 
+  эмбеддингами текстов кластера; рекомендации с близостью ниже порога 0.7 отправлялись на доработку.
+        
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">Python</div>
+                <div class="skills__skill">HuggingFace</div>
+                <div class="skills__skill">LLM</div>
+              </div>
+            </div>
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">See Live</h3>              
+              <a
+                href="https://github.com/TanasevichPS/llm_agents"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://linkedin.com/in/tanasevich-ps">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/TanasevichPS">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>              
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Polina Tanasevich</h4>
+            <p class="main-footer__short-desc">
+              PhD student in Mathematics and results-driven leader in data science and AI, specializing in scalable solutions and data-driven strategies
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
