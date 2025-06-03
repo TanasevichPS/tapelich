@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Description of the SBER projects</title>
-    <meta name="description" content="description of the SBER projects" />
+    <title>Description of the Sber projects</title>
+    <meta name="description" content="description of the Sber projects" />
 
     <link rel="stylesheet" href="css/style.css" />
 
@@ -110,8 +110,8 @@
             <div class="project-details__desc">
               <h3 class="project-details__content-title">Overview</h3>
               <p class="project-details__desc-para">
-                1.	Developed geo-analytics system, which was then improved with a custom LLM solution. 
-                This boosted the accuracy of the geo-analytics forecasts by 16%. <br/>
+                <h3><strong> 1.	Developed geo-analytics system, which was then improved with a custom LLM solution. 
+                This boosted the accuracy of the geo-analytics forecasts by 16%. </strong>  <h3> <br/>
                 в данном проекте используются мультимодальные эмбеддинги, построенные на последовательностях событий, 
                 которые построены с помощью библиотеки Pytorch lifestream несколькими методами - COLES, NSP, SOP. 
                 мультимодальность заключалась в доменах - гео домен, транзакции, точки интересов, тип месторасположения 
@@ -169,7 +169,7 @@
               Улучшила R² прогноза спроса с 0.81 до 0.91 (+12%) за счёт LLM, Ускорение инференса LLM в 4x за счет INT8-квантования. <br/>
             </p>
             <p class="project-details__desc-para">
-            2.	Accelerated BERT inference 2x on NVIDIA A100 via model quantization. <br/>
+            <strong> 2.	Accelerated BERT inference 2x on NVIDIA A100 via model quantization. </strong> <br/>
             Проект: Оптимизация BERT для чат-бота с использованием INT8 квантования и TensorRT - Разрабатывался высоконагруженный 
             чат-бот для обработки пользовательских запросов в реальном времени. 
             Основная модель — BERT— использовалась для NLP-задач (генерация ответов).  
@@ -219,8 +219,9 @@
               <td>16</td>
               <td>19</td>
           </tr>
-        </table> <br/> 
-      
+        </table> 
+              
+        <br/> 
         ROUGE-L: Оценивает длину наибольшей общей подпоследовательности (LCS) слов, учитывая беглость и структуру. <br/> 
         Perplexity – метрика, измеряющая неуверенность языковой модели (LLM) при генерации текста. экспонента от энтропии: 
         Perplexity=exp(−1/N∑logP(w_i∣w1,…,wi−1)), где: P(wi) — вероятность предсказания слова w_i моделью. 
@@ -228,8 +229,8 @@
         Метрики ROUGE-L и Perplexity оценивались на отдельном валидационном наборе диалогов, репрезентативном для работы чат-бота. <br/> 
       </p>
       <p class="project-details__desc-para">
-      3.	Built NLP pipeline for log analysis that detected +42% errors, resolved 70% of issues, cut verification costs by 80%, and
-      improved customer experience.<br/>
+      <strong> 3.	Built NLP pipeline for log analysis that detected +42% errors, resolved 70% of issues, cut verification costs by 80%, and
+      improved customer experience. </strong> <br/>
       Разработать систему для автоматического анализа текстовых логов, выявления ошибок и оценки их влияния на бизнес-процессы. <br/>
       Ключевые результаты:<br/>
       - Обнаружено +42% новых ошибок (улучшение качества мониторинга). <br/>
@@ -246,8 +247,8 @@
       Визуализация путей клиентов (графы для анализа влияния ошибок на бизнес-метрики). Инструменты: NetworkX + Gephi. <br/>
     </p>
     <p class="project-details__desc-para">
-    4.	The proportion of non-relevant recommendations was reduced from 30% to 10%, according to expert assessment using 
-    LLM inference. <br/>
+    <strong>4.	The proportion of non-relevant recommendations was reduced from 30% to 10%, according to expert assessment using 
+    LLM inference.</strong>  <br/>
     Проект: Агент для обработки обратной связи на базе LLM. <br/> 
     Цель: Снизить долю нерелевантных рекомендаций с 30% до 10% за счёт кластеризации обратной связи и точной генерации решений.<br/>
     Проблема: Обратная связь (отзывы, жалобы, предложения) от пользователей часто неструктурирована и содержит шум. 
@@ -278,6 +279,10 @@
   Критик (Quality Assurance). Функции: Оценка релевантности: Сравнивает рекомендации с эталонными решениями, 
   если есть, а также (Embedding Similarity) Средняя косинусная близость между эмбеддингом рекомендации (E5) и 
   эмбеддингами текстов кластера; рекомендации с близостью ниже порога 0.7 отправлялись на доработку.
+    </p>
+    <p class="project-details__desc-para">
+      <strong> 5. </strong> <br/>
+      
         
               </p>
             </div>
@@ -288,11 +293,11 @@
                 <div class="skills__skill">HuggingFace</div>
                 <div class="skills__skill">LLM</div>
               </div>
-            </div>
+            </div> 
             <div class="project-details__links">
-              <h3 class="project-details__content-title">See Live</h3>              
+              <h3 class="project-details__content-title">Private Repo</h3>              
               <a
-                href="https://github.com/TanasevichPS/llm_agents"
+                href="https://github.com/TanasevichPS/geo_embeddings"
                 class="btn btn--med btn--theme-inv project-details__links-btn"
                 target="_blank"
                 >Code</a
