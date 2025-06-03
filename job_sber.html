@@ -135,32 +135,32 @@
                 - Bitsandbytes - Библиотека для квантования моделей (сжатие весов 32/16-битных чисел в 8/4-битные). 
                 Уменьшает размер модели и ускоряет инференс <br/>
                 
-                Пример реализации:
-                <code>
+                <p>Пример реализации:</p>
+                <p><code>
                   from transformers import AutoModelForCausalLM, AutoTokenizer
                   import torch
-                  # Загрузка модели и токенизатора
+                  # Загрузка модели и токенизатора<Br>
   
-                  model_id = "meta-llama/Llama-2-7b-chat-hf"
-                  tokenizer = AutoTokenizer.from_pretrained(model_id)
-                  model = AutoModelForCausalLM.from_pretrained(
-                    model_id,
-                    load_in_8bit=True,  # Включение 8-битного квантования
-                    device_map="auto"    # Автораспределение по GPU/CPU)
-                  # Пример инференса
-                  input_text = "Как повысить точность геоаналитики?"
-                  inputs = tokenizer(input_text, return_tensors="pt").to("cuda")
-                  outputs = model.generate(**inputs, max_new_tokens=50)
-                  print(tokenizer.decode(outputs[0], skip_special_tokens=True))
+                  model_id = "meta-llama/Llama-2-7b-chat-hf"<Br>
+                  tokenizer = AutoTokenizer.from_pretrained(model_id)<Br>
+                  model = AutoModelForCausalLM.from_pretrained(<Br>
+                    model_id,<Br>
+                    load_in_8bit=True,  # Включение 8-битного квантования <Br>
+                    device_map="auto"    # Автораспределение по GPU/CPU) <Br>
+                  # Пример инференса <Br>
+                  input_text = "Как повысить точность геоаналитики?" <Br>
+                  inputs = tokenizer(input_text, return_tensors="pt").to("cuda") <Br>
+                  outputs = model.generate(**inputs, max_new_tokens=50)<Br>
+                  print(tokenizer.decode(outputs[0], skip_special_tokens=True)) <Br>
   
-                  # Для эмбеддингов:
-                  inputs = tokenizer(input_text, return_tensors="pt", padding=True, truncation=True).to("cuda")
-                  with torch.no_grad():
-                    outputs = model(**inputs, output_hidden_states=True)
+                  # Для эмбеддингов: <Br>
+                  inputs = tokenizer(input_text, return_tensors="pt", padding=True, truncation=True).to("cuda") <Br>
+                  with torch.no_grad(): <Br>
+                    outputs = model(**inputs, output_hidden_states=True) <Br>
   
-                  # Усреднение последнего слоя
+                  # Усреднение последнего слоя<Br>
                   embeddings=outputs.hidden_states[-1].mean(dim=1).cpu().numpy()
-                </code>
+                </code></p>
               </p>
               <p class="project-details__desc-para">
               Гибридная модель: Объединение эмбеддингов путем конкатенации. Вход: мультимодальные эмбеддинги (128-D) + 
@@ -200,8 +200,8 @@
                 <td>После оптимизации</td>
             </tr>
             <tr>
-                <td>Latency</td>
-                <td>50 mc/td>
+                <td>Latency </td>
+                <td>50 mc </td>
                 <td>25 mc</td>
             </tr>
             <tr>
@@ -220,6 +220,7 @@
               <td>19</td>
           </tr>
         </table> <br/> 
+      
         ROUGE-L: Оценивает длину наибольшей общей подпоследовательности (LCS) слов, учитывая беглость и структуру. <br/> 
         Perplexity – метрика, измеряющая неуверенность языковой модели (LLM) при генерации текста. экспонента от энтропии: 
         Perplexity=exp(−1/N∑logP(w_i∣w1,…,wi−1)), где: P(wi) — вероятность предсказания слова w_i моделью. 
