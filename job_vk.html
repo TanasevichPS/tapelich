@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Description of VK projects</title>
+    <meta name="description" content="description of VK projects" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__content">
+        <div class="header__logo-container">
+          <div class="header__logo-img-cont">
+            <img
+              src="./assets/png/profile.png"
+              alt="Ram Maheshwari Logo Image"
+              class="header__logo-img"
+            />
+          </div>
+          <span class="header__logo-sub">Polina Tanasevich</span>
+        </div>
+        <div class="header__main">
+          <ul class="header__links">
+            <li class="header__link-wrapper">
+              <a href="./index.html" class="header__link"> Home </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#about" class="header__link">About </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#conferences" class="header__link">
+                Conferences
+              </a>
+            </li>
+            <li class="header__link-wrapper">
+              <a href="./index.html#contact" class="header__link"> Contact </a>
+            </li>
+          </ul>
+          <div class="header__main-ham-menu-cont">
+            <img
+              src="./assets/svg/ham-menu.svg"
+              alt="hamburger menu"
+              class="header__main-ham-menu"
+            />
+            <img
+              src="./assets/svg/ham-menu-close.svg"
+              alt="hamburger menu close"
+              class="header__main-ham-menu-close d-none"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="header__sm-menu">
+        <div class="header__sm-menu-content">
+          <ul class="header__sm-menu-links">
+            <li class="header__sm-menu-link">
+              <a href="./index.html"> Home </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#about"> About </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#conferences"> Conferences </a>
+            </li>
+
+            <li class="header__sm-menu-link">
+              <a href="./index.html#contact"> Contact </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <section class="project-cs-hero">
+      <div class="project-cs-hero__content">
+        <h1 class="heading-primary">Senior Data Analyst</h1>
+        <div class="project-cs-hero__info">
+          <p class="text-primary">
+            ...
+          </p>
+        </div>
+        <div class="project-cs-hero__cta">
+          <a href="https://github.com/TanasevichPS/geo_embeddings" class="btn btn--bg" target="_blank">Private Repo</a>
+        </div>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="main-container">
+        <div class="project-details__content">
+          <div class="project-details__showcase-img-cont">
+            <img
+              src="./assets/jpeg/nte_start.png"
+              alt="Project Image"
+              class="project-details__showcase-img"
+            />
+          </div>
+          <div class="project-details__content-main">
+            <div class="project-details__desc">
+              <h3 class="project-details__content-title">Overview</h3>
+              <p class="project-details__desc-para">
+                <strong> 1.	 Developed LTV prediction models, increasing revenue by 12% through enhanced user segmentation and retention </strong> <br/>
+                ### **Проект: Прогнозирование LTV с кластеризацией и LightGBM<br/>  
+              **Цель:<br/>  
+              Увеличить доход на 12% за счет точного прогнозирования Lifetime Value (LTV) игроков, сегментации аудитории и оптимизации ретеншен-стратегий.
+              
+              ---
+              
+              ## **1. Этапы реализации<br/>
+              
+              ### **1.1. Подготовка данных<br/>
+              **Источники данных:<br/>  
+              - Логи игровых сессий (активность, время в игре).  
+              - Платежи (суммы, частота, история транзакций).  
+              - Демография (регион, устройство, возраст аккаунта).  
+              - Участие в ивентах (прогресс, награды).  
+              
+              **ETL-процесс:<br/>  
+              - **Инструменты:<br/> Python (Pandas, PySpark), SQL (PostgreSQL).  
+              - **Шаги:<br/>  
+                - Агрегация сырых данных в признаки на уровне пользователя (RFM-метрики):  
+                  ```python
+                  features = df.groupby('user_id').agg({
+                      'session_duration': 'sum',
+                      'payment_amount': ['sum', 'count', 'max'],
+                      'last_login': 'max',
+                      'event_participation': 'mean'
+                  })
+                  ```  
+                - Нормализация данных (StandardScaler).  
+              
+              ---
+              
+              ### **1.2. Кластеризация игроков (K-means)<br/>  
+              **Цель:<br/> Сегментировать игроков на однородные группы для персонализации стратегий.  
+              
+              **Метод:<br/>  
+              - **Алгоритм:<br/> K-means (Scikit-learn).  
+              - **Определение числа кластеров:<br/> Метод локтя (Elbow Method) по SSE (Sum of Squared Errors).  
+                ```python
+                from sklearn.cluster import KMeans
+                sse = []
+                for k in range(1, 10):
+                    kmeans = KMeans(n_clusters=k, random_state=42).fit(features)
+                    sse.append(kmeans.inertia_)
+                plt.plot(range(1, 10), sse, marker='o')
+                plt.xlabel('Количество кластеров')
+                plt.ylabel('SSE')
+                ```  
+                Оптимальное число кластеров — **5<br/> (точка изгиба на графике).  
+              
+              **Результат кластеризации:<br/>  
+              | Кластер | Характеристики |  
+              |---------|----------------|  
+              | 1       | Высокодоходные, редкие платежи (киты) |  
+              | 2       | Частые, но мелкие платежи (постоянные) |  
+              | 3       | Новые игроки с низкой активностью |  
+              | 4       | Возвращающиеся, средние платежи |  
+              | 5       | Неплатящие, но активные |  
+              
+              ---
+              
+              ### **1.3. Прогнозирование LTV (LightGBM)<br/>  
+              **Цель:<br/> Предсказать LTV для каждого кластера.  
+              
+              **Модель:<br/>  
+              - **Алгоритм:<br/> LightGBM (градиентный бустинг).  
+              - **Признаки:<br/>  
+                - RFM-метрики (Recency, Frequency, Monetary).  
+                - Активность за последние 7/30 дней.  
+                - Участие в ивентах.  
+              - <br/>Целевая переменная:<br/> Сумма платежей за 90 дней.  
+              
+              **Обучение:<br/>  
+              ```python
+              import lightgbm as lgb
+              from sklearn.model_selection import train_test_split
+              
+              X_train, X_test, y_train, y_test = train_test_split(features, target, test_size=0.2)
+              model = lgb.LGBMRegressor(n_estimators=500, learning_rate=0.05)
+              model.fit(X_train, y_train, eval_set=[(X_test, y_test)], early_stopping_rounds=50)
+              ```  
+              **Метрики:<br/>  
+              - **RMSE:<br/> 120 (руб)  
+              - **R²:** 0.89  
+              
+              ---
+              
+              ### **1.4. Автоматизация и мониторинг<br/>  
+              **Airflow:**  
+              - **Даг:** Еженедельный перерасчет LTV.  
+                ```python
+                from airflow import DAG
+                from airflow.operators.python_operator import PythonOperator
+              
+                def update_ltv():
+                    # Загрузка данных, кластеризация, прогноз
+                    pass
+              
+                dag = DAG('ltv_prediction', schedule_interval='0 3 * * MON', start_date=datetime(2023, 1, 1))
+                task = PythonOperator(task_id='run_ltv', python_callable=update_ltv, dag=dag)
+                ```  
+              
+              **Zeppelin:<br/>  
+              - **Дашборды:<br/>  
+                1. **Распределение LTV по кластерам** (столбчатая диаграмма).  <br/>
+                2. **Динамика LTV** (график за 6 месяцев).  <br/>
+                3. **Ретеншен по кластерам** (heatmap).  <br/>
+                Пример SQL-запроса в Zeppelin:  <br/>
+                ```sql
+                %sql
+                SELECT cluster, AVG(ltv) AS avg_ltv, COUNT(*) AS users
+                FROM ltv_predictions
+                GROUP BY cluster
+                ```  
+              
+              ---
+              
+              ## **2. Результаты <br/>
+              - **+12% к доходу:** За счет таргетированных промо для кластеров 1 и 2.  <br/>
+              - **Рост ретеншена на 7%:** Персонализированные push-уведомления для кластера 3.  <br/>
+              - **Сокращение CAC:** Исключение неперспективных сегментов (кластер 5) из рекламных кампаний.  <br/>
+              
+            
+          <strong> 2. Designed promotion strategies that increased participant engagement by 37% </strong> <br/>
+                ### **Проект: Оптимизация промо-стратегий для роста вовлеченности на 37%**  
+      Цель: Увеличить вовлеченность игроков на 37% через персонализированные промо-кампании на основе A/B-тестов, 
+                предсказательного моделирования и динамического ценообразования.  
+      
+      ---
+      
+      ## **1. Этапы реализации**  
+      
+     1.1. Сбор и подготовка данных 
+      Источники данных:
+      - Игровая аналитика:
+        - Логи сессий (длительность, частота, активность в ивентах).  
+        - Взаимодействие с промо-предложениями (клики, конверсия).  
+      - Платежи: История транзакций, чувствительность к скидкам.  
+      - Демография: Регион, платформа, возраст аккаунта.  
+      
+      **ETL-процесс:**  
+      - **Инструменты:** Python, SQL (Hive).  
+      - **Ключевые метрики:**  
+        ```python
+        user_engagement = df.groupby('user_id').agg({
+            'sessions': 'count',
+            'session_duration': 'mean',
+            'promo_clicks': 'sum',
+            'payment_amount': 'sum'
+        })
+        ```  
+      - Нормализация: MinMaxScaler для признаков активности.  
+      
+      1.2. Сегментация аудитории 
+      **Методы: 
+      1. RFM-анализ (Recency, Frequency, Monetary): 
+         - Recency: Дата последней сессии.  
+         - Frequency: Количество сессий за 30 дней.  
+         - Monetary: Сумма платежей. 
+      2. Кластеризация (Gaussian Mixture):
+         - Выбрана вместо K-means из-за неравномерного распределения данных.  
+         - 5 сегментов: Киты, постоянные плательщики, новички, возвращенцы, "спящие".  
+      
+      1.3. A/B-тестирование промо-механик 
+      **Гипотезы:
+      - **Вариант A:** Скидка 20% на первый платеж.  
+      - **Вариант B:** Бесплатный эксклюзивный предмет за 3 сессии.  
+      - **Вариант C:** Персонализированный бонус (на основе LTV-модели).  
+      
+      **Реализация:**  
+      - **Инструменты:** Python (SciPy), Airflow для управления тестами.  
+      - **Распределение трафика:** 30% A, 30% B, 40% C (фреймворк **Celery** для балансировки).  
+      - **Метрики:**  
+        - **Конверсия в платежи.**  
+        - **Retention на 7-й день.**  
+        ```python
+        from scipy.stats import ttest_ind
+        t_stat, p_value = ttest_ind(group_a['conversion'], group_b['conversion'])
+        ```  
+      
+      **Результаты:**  
+      - **Вариант C** дал +15% к конверсии vs A/B.  
+      - Лучший Retention у **B** (+22% для новичков).  
+      
+      
+      1.4. Динамическое ценообразование:
+      **Алгоритм:
+      1. Predictive Model (CatBoost):  
+         - Предсказывает вероятность покупки для каждого пользователя.  
+         - **Признаки:** Активность, история платежей, реакция на прошлые промо.  
+      2. **Оптимальная скидка:**  
+         - Максимизация прибыли: <code> argmax_discount (P(purchase | discount) * (price - cost) </code>  
+         - **Диапазон скидок:** 5–30%.  
+      
+      Пример работы:
+      - Для "китов": Фиксированный бонус (не скидка).  
+      - Для новичков: Скидка 25% + бесплатный предмет.  
+      
+      
+      ## **2. Результаты**  
+      - **+37% к вовлеченности** (метрика: сессии/неделю).  
+      - **+12% конверсии в платежи** для целевых сегментов.  
+      - **Снижение CAC на 20%** за счет исключения "холодных" пользователей из рекламы.  
+      
+      
+      ## **3. Проблемы и решения**  
+      - Проблема: Шум в данных из-за ботов. Решение: Фильтрация через порог активности (HWID + поведенческие паттерны).  
+      - Проблема: Задержки в расчетах LTV. Решение: Предрасчет признаков в Hive Materialized Views.  
+
+    <strong> 3. Анализ твинко</strong> <br/>
+                Цель:
+Исследование поведения игроков, использующих несколько аккаунтов (твинков), для оптимизации монетизации и удержания аудитории.
+
+Ключевые задачи и выводы:
+
+Доля твинков: 50% твинкующих игроков используют два аккаунта, среднее число твинков на игрока — 3.
+
+Платежи: Твинки из прошлого месяца (old) приносят больше дохода (ARPPU 1635p) по сравнению с новыми (ARPPU 827p).
+
+Отток: Ежемесячно теряется 30% твинков, но 25% остаются в игре.
+
+Компенсация аудитории: Новые игроки и возвраты компенсируют сокращение core-аудитории (коэффициент сокращения — 0.67).
+
+Техническая реализация:
+
+Источники данных: Логи игровых сессий, платежи, регистрация аккаунтов, HWID (идентификаторы устройств).
+
+Инструменты:
+
+Python (Pandas, NumPy, Scikit-learn): Для анализа данных, кластеризации игроков (например, выделение твинков по HWID) и прогнозирования LTV.
+
+SQL: Для агрегации данных (например, подсчет уникальных аккаунтов, платежей).
+
+Airflow: Для автоматизации ETL-процессов (ежедневное обновление метрик).
+
+Метрики:
+
+Удержание (retention) по типам твинков (new, old, reactivation).
+
+ARPU/ARPPU, доля платящих игроков.
+
+Визуализация: Power BI для отчетов по динамике твинков и их вкладу в revenue.
+                
+<strong> 4.Анализ ивента Top Gun (WFWFW) </strong> <br/>
+                Цель:
+Оценка эффективности ивента для вовлечения игроков, монетизации и удержания новых пользователей.
+
+Ключевые задачи и выводы:
+
+Участие: 12% MAU на RU, 5% на West. 56% участников — твинки.
+
+Новички: 47% совершили первый платеж во время ивента, 44% остались в игре.
+
+Вовлеченность: Среднее время жизни (Life Time) — 14 дней (RU), 16 дней (West).
+
+Жетоны: Только 36% игроков обменяли жетоны на награды (чаще из-за высокого порога — 20 жетонов за предмет).
+
+Техническая реализация:
+
+Источники данных: Логи ивента (задачи PvP/PvE), транзакции, сессии, регистрации.
+
+Инструменты:
+
+Python (Matplotlib, Seaborn): Для анализа воронок (например, прогресс в бонусных заданиях) и когортного анализа (Retention по дням).
+
+SQL: Агрегация данных по игрокам (например, распределение по типам квестов).
+
+Airflow: Планирование отчетов (ежедневный мониторинг DAU участников).
+
+Метрики:
+
+Retention (1-day, 7-day), конверсия в платежи, среднее количество сессий.
+
+Распределение жетонов по предметам (частота обмена).
+
+Визуализация: Графики в Jupyter Notebook для презентации маркетингу.
+
+                
+                
+              </p>
+            </div>
+            <div class="project-details__tools-used">
+              <h3 class="project-details__content-title">Tools Used</h3>
+              <div class="skills">
+                <div class="skills__skill">Python</div>
+                <div class="skills__skill">HuggingFace</div>
+                <div class="skills__skill">LLM</div>
+              </div>
+            </div> 
+            <div class="project-details__links">
+              <h3 class="project-details__content-title">Private Repo</h3>              
+              <a
+                href="https://github.com/TanasevichPS/geo_embeddings"
+                class="btn btn--med btn--theme-inv project-details__links-btn"
+                target="_blank"
+                >Code</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="main-footer">
+      <div class="main-container">
+        <div class="main-footer__upper">
+          <div class="main-footer__row main-footer__row-1">
+            <h2 class="heading heading-sm main-footer__heading-sm">
+              <span>Social</span>
+            </h2>
+            <div class="main-footer__social-cont">
+              <a target="_blank" rel="noreferrer" href="https://linkedin.com/in/tanasevich-ps">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/linkedin-ico.png"
+                  alt="icon"
+                />
+              </a>
+              <a target="_blank" rel="noreferrer" href="https://github.com/TanasevichPS">
+                <img
+                  class="main-footer__icon"
+                  src="./assets/png/github-ico.png"
+                  alt="icon"
+                />
+              </a>              
+            </div>
+          </div>
+          <div class="main-footer__row main-footer__row-2">
+            <h4 class="heading heading-sm text-lt">Polina Tanasevich</h4>
+            <p class="main-footer__short-desc">
+              PhD student in Mathematics and results-driven leader in data science and AI, specializing in scalable solutions and data-driven strategies
+            </p>
+          </div>
+        </div>
+
+        <div class="main-footer__lower">
+          &copy; Copyright 2021. Made by
+          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com"
+            >Ram Maheshwari</a
+          >
+        </div>
+      </div>
+    </footer>
+    <script src="./index.js"></script>
+  </body>
+</html>
