@@ -128,6 +128,7 @@
               - Инструменты:<br/> Python (Pandas, PySpark), SQL (PostgreSQL).  
               - Шаги:<br/>  
                 - Агрегация сырых данных в признаки на уровне пользователя (RFM-метрики):  <br/>  
+                <p>Пример реализации:</p>
                  <p><code> 
                   features = df.groupby('user_id').agg({<br/> 
                       'session_duration': 'sum',<br/> 
@@ -145,7 +146,8 @@
               Метод:<br/>  
               - Алгоритм: K-means (Scikit-learn).  <br/>  
               - Определение числа кластеров: Метод локтя (Elbow Method) по SSE (Sum of Squared Errors).  <br/>  
-                <p><code>```
+              <p>Пример реализации:</p>
+                <p><code>
                 from sklearn.cluster import KMeans<br/> 
                 sse = []<br/> 
                 for k in range(1, 10):<br/> 
@@ -154,7 +156,7 @@
                 plt.plot(range(1, 10), sse, marker='o') <br/> 
                 plt.xlabel('Количество кластеров') <br/> 
                 plt.ylabel('SSE') <br/> 
-                ```  </p></code>
+                </p></code>
               
               Оптимальное число кластеров — 5 (точка изгиба на графике).  <br/> 
               
@@ -180,6 +182,7 @@
               - Целевая переменная: Сумма платежей за 90 дней.  <br/> 
               
               Обучение:<br/>  
+              <p>Пример реализации:</p>
              <p><code>
               import lightgbm as lgb <br/>  
               from sklearn.model_selection import train_test_split <br/>  
@@ -196,6 +199,7 @@
               1.4. Автоматизация и мониторинг<br/>  
               Airflow: <br/>  
               - Даг: Еженедельный перерасчет LTV.  <br/>  
+              <p>Пример реализации:</p>
                 <p><code>
                 from airflow import DAG <br/> 
                 from airflow.operators.python_operator import PythonOperator <br/> 
@@ -238,13 +242,17 @@
       ETL-процесс:<br/>   
       - Инструменты: Python, SQL (Hive).  <br/> 
       - Ключевые метрики:  <br/> 
-        ```python
-        user_engagement = df.groupby('user_id').agg({
+        <p>Пример реализации:</p>
+        <p><code>
+          user_engagement = df.groupby('user_id').agg({
             'sessions': 'count',
             'session_duration': 'mean',
             'promo_clicks': 'sum',
             'payment_amount': 'sum'
         })
+        </code>        
+        </p>
+        
               
       - Нормализация: MinMaxScaler для признаков активности.  <br/> 
       
