@@ -128,14 +128,14 @@
               - Инструменты:<br/> Python (Pandas, PySpark), SQL (PostgreSQL).  
               - Шаги:<br/>  
                 - Агрегация сырых данных в признаки на уровне пользователя (RFM-метрики):  <br/>  
-                 <p><code> ```
+                 <p><code> 
                   features = df.groupby('user_id').agg({<br/> 
                       'session_duration': 'sum',<br/> 
                       'payment_amount': ['sum', 'count', 'max'],<br/> 
                       'last_login': 'max',<br/> 
                       'event_participation': 'mean'<br/> 
                   })
-                  ```  </code></p>
+                  </code></p>
                 - Нормализация данных (StandardScaler).  <br/>  
               
               
